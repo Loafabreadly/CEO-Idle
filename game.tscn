@@ -1,0 +1,88 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkspo60kqtp17"]
+
+[ext_resource type="Script" path="res://Game.gd" id="1_im4fr"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_im4fr")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 575.0
+offset_top = 256.0
+offset_right = 615.0
+offset_bottom = 296.0
+
+[node name="buyMP" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = -157.0
+offset_top = 122.0
+offset_right = -40.0
+offset_bottom = 153.0
+text = "Buy Multiplier"
+
+[node name="moneyLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -140.0
+offset_top = 81.0
+offset_right = -15.0
+offset_bottom = 104.0
+text = "Current Money: "
+
+[node name="mpLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -165.0
+offset_top = 49.0
+offset_right = -17.0
+offset_bottom = 72.0
+text = "Current Multiplier: "
+
+[node name="mp" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 47.0
+offset_right = 36.0
+offset_bottom = 70.0
+
+[node name="money" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 81.0
+offset_right = 111.0
+offset_bottom = 104.0
+
+[node name="statusLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -86.0
+offset_top = 181.0
+offset_right = 105.0
+offset_bottom = 236.0
+
+[node name="nlc" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -12.0
+offset_top = -8.0
+offset_right = 28.0
+offset_bottom = 15.0
+
+[node name="nlcLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -189.0
+offset_top = -7.0
+offset_right = -36.0
+offset_bottom = 16.0
+text = "Next MP Level Cost:"
+
+[node name="grind" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = 121.0
+offset_right = 34.0
+offset_bottom = 152.0
+text = "Grind"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="pressed" from="UI/buyMP" to="." method="_on_buy_mp_pressed"]
+[connection signal="pressed" from="UI/grind" to="." method="_on_grind_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

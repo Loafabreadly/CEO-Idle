@@ -12,10 +12,10 @@ config_version=5
 
 config/name="Ceo-idle"
 config/version="Core"
-run/main_scene="res://game.tscn"
+run/main_scene="res://scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 boot_splash/bg_color=Color(0.0392157, 0.168627, 0.113725, 1)
-boot_splash/image="res://bread.png"
+boot_splash/image="res://imgs/bread.png"
 
 [display]
 

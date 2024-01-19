@@ -1,19 +1,17 @@
 [gd_scene load_steps=2 format=3 uid="uid://bkspo60kqtp17"]
 
-[ext_resource type="Script" path="res://Game.gd" id="1_im4fr"]
+[ext_resource type="Script" path="res://scripts/Game.gd" id="1_7y28a"]
 
 [node name="Game" type="Node"]
-script = ExtResource("1_im4fr")
+script = ExtResource("1_7y28a")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 960.0
-offset_top = 540.0
-offset_right = 1000.0
-offset_bottom = 580.0
-size_flags_horizontal = 6
-size_flags_vertical = 6
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
 
 [node name="CenterContainer" type="CenterContainer" parent="UI"]
 layout_mode = 1

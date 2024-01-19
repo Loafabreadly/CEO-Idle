@@ -13,76 +13,63 @@ offset_top = 256.0
 offset_right = 615.0
 offset_bottom = 296.0
 
-[node name="buyMP" type="Button" parent="UI"]
+[node name="CenterContainer" type="CenterContainer" parent="UI"]
 layout_mode = 0
-offset_left = -157.0
-offset_top = 122.0
-offset_right = -40.0
-offset_bottom = 153.0
-text = "Buy Multiplier"
+offset_left = -573.0
+offset_top = -255.0
+offset_right = 1347.0
+offset_bottom = 825.0
 
-[node name="moneyLabel" type="Label" parent="UI"]
-layout_mode = 0
-offset_left = -140.0
-offset_top = 81.0
-offset_right = -15.0
-offset_bottom = 104.0
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="moneyContainer" type="HBoxContainer" parent="UI/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="moneyLabel" type="Label" parent="UI/CenterContainer/VBoxContainer/moneyContainer"]
+layout_mode = 2
 text = "Current Money: "
 
-[node name="mpLabel" type="Label" parent="UI"]
-layout_mode = 0
-offset_left = -165.0
-offset_top = 49.0
-offset_right = -17.0
-offset_bottom = 72.0
+[node name="money" type="Label" parent="UI/CenterContainer/VBoxContainer/moneyContainer"]
+layout_mode = 2
+
+[node name="mpContainer" type="HBoxContainer" parent="UI/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="mpLabel" type="Label" parent="UI/CenterContainer/VBoxContainer/mpContainer"]
+layout_mode = 2
 text = "Current Multiplier: "
 
-[node name="mp" type="Label" parent="UI"]
-layout_mode = 0
-offset_left = -4.0
-offset_top = 47.0
-offset_right = 36.0
-offset_bottom = 70.0
+[node name="mp" type="Label" parent="UI/CenterContainer/VBoxContainer/mpContainer"]
+layout_mode = 2
 
-[node name="money" type="Label" parent="UI"]
-layout_mode = 0
-offset_left = -4.0
-offset_top = 81.0
-offset_right = 111.0
-offset_bottom = 104.0
+[node name="nlcContainer" type="HBoxContainer" parent="UI/CenterContainer/VBoxContainer"]
+layout_mode = 2
 
-[node name="statusLabel" type="Label" parent="UI"]
-layout_mode = 0
-offset_left = -86.0
-offset_top = 181.0
-offset_right = 105.0
-offset_bottom = 236.0
-
-[node name="nlc" type="Label" parent="UI"]
-layout_mode = 0
-offset_left = -12.0
-offset_top = -8.0
-offset_right = 28.0
-offset_bottom = 15.0
-
-[node name="nlcLabel" type="Label" parent="UI"]
-layout_mode = 0
-offset_left = -189.0
-offset_top = -7.0
-offset_right = -36.0
-offset_bottom = 16.0
+[node name="nlcLabel" type="Label" parent="UI/CenterContainer/VBoxContainer/nlcContainer"]
+layout_mode = 2
 text = "Next MP Level Cost:"
 
-[node name="grind" type="Button" parent="UI"]
-layout_mode = 0
-offset_left = -18.0
-offset_top = 121.0
-offset_right = 34.0
-offset_bottom = 152.0
+[node name="nlc" type="Label" parent="UI/CenterContainer/VBoxContainer/nlcContainer"]
+layout_mode = 2
+
+[node name="buttonContainer" type="HBoxContainer" parent="UI/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="buyMP" type="Button" parent="UI/CenterContainer/VBoxContainer/buttonContainer"]
+layout_mode = 2
+text = "Buy Multiplier"
+
+[node name="grind" type="Button" parent="UI/CenterContainer/VBoxContainer/buttonContainer"]
+layout_mode = 2
 text = "Grind"
+
+[node name="statusLabel" type="Label" parent="UI/CenterContainer/VBoxContainer"]
+layout_mode = 2
 
 [node name="Timer" type="Timer" parent="."]
 
-[connection signal="pressed" from="UI/buyMP" to="." method="_on_buy_mp_pressed"]
-[connection signal="pressed" from="UI/grind" to="." method="_on_grind_pressed"]
+[connection signal="pressed" from="UI/CenterContainer/VBoxContainer/buttonContainer/buyMP" to="." method="_on_buy_mp_pressed"]
+[connection signal="pressed" from="UI/CenterContainer/VBoxContainer/buttonContainer/grind" to="." method="_on_grind_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

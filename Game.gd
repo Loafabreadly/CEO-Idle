@@ -2,12 +2,12 @@ extends Node
 
 @onready var currentMoney = 0
 @onready var currentMP = 1
-@onready var money = $UI/money
-@onready var mp = $UI/mp
+@onready var money = $UI/CenterContainer/VBoxContainer/moneyContainer/money
+@onready var mp = $UI/CenterContainer/VBoxContainer/mpContainer/mp
 @onready var gameTimer = $Timer
 @onready var nextLevelCost = 10
-@onready var status = $UI/statusLabel
-@onready var nextLevelCostLabel = $UI/nlc
+@onready var status = $UI/CenterContainer/VBoxContainer/statusLabel
+@onready var nextLevelCostLabel = $UI/CenterContainer/VBoxContainer/nlcContainer/nlc
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	startGame()
